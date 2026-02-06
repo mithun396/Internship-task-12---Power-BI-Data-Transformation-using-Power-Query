@@ -107,6 +107,4 @@ Final Outcome
 - Business-ready columns created
 - Dataset optimized for dashboarding
 
-Note:
-.pbix file and dashboard_export.pdf must be created directly
-inside Power BI Desktop after applying these steps.
+
