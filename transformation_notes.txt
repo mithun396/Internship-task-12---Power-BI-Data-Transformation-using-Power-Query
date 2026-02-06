@@ -1,0 +1,112 @@
+
+Task 12 – Power BI Data Transformation (Power Query)
+===================================================
+
+This document explains the data transformation steps applied in Power Query
+before building dashboards. The steps are written so they can be followed
+for HR Analytics, Superstore, or Customer Churn datasets.
+
+---------------------------------------------------
+1. Data Import
+---------------------------------------------------
+- Open Power BI Desktop
+- Home → Get Data → Text/CSV / Excel (depending on dataset)
+- Select dataset file
+- Click "Transform Data" to open Power Query Editor
+
+---------------------------------------------------
+2. Remove Unwanted Columns
+---------------------------------------------------
+- Identify columns not useful for analysis (IDs, duplicate text fields)
+- Select columns → Right-click → Remove Columns
+Examples:
+- HR: EmployeeCount, Over18
+- Superstore: Row ID
+- Churn: CustomerID (keep only if needed for reference)
+
+---------------------------------------------------
+3. Rename Columns
+---------------------------------------------------
+- Double-click column header or Right-click → Rename
+Examples:
+- MonthlyIncome → Monthly Income
+- ShipMode → Ship Mode
+- TotalCharges → Total Charges
+
+---------------------------------------------------
+4. Handle Missing Values
+---------------------------------------------------
+- Identify null values (filter dropdown shows (null))
+Options:
+- Remove rows with nulls (Home → Remove Rows → Remove Blank Rows)
+- Replace values (Transform → Replace Values)
+Examples:
+- Replace null salary with median
+- Replace null categorical values with 'Unknown'
+
+---------------------------------------------------
+5. Change Data Types
+---------------------------------------------------
+- Select column → Data Type dropdown
+Examples:
+- Age → Whole Number
+- Salary / Sales → Decimal Number
+- Order Date → Date
+- Churn → Text (Yes/No)
+
+---------------------------------------------------
+6. Split / Merge Columns
+---------------------------------------------------
+Split:
+- Full Name → Split by Delimiter (Space)
+- Order Date-Time → Split Date & Time
+
+Merge:
+- First Name + Last Name → Full Name
+- City + State → Location
+
+---------------------------------------------------
+7. Conditional Columns
+---------------------------------------------------
+Create Age Group:
+Transform → Conditional Column
+- If Age < 25 → 'Young'
+- If Age between 25 and 40 → 'Mid'
+- Else → 'Senior'
+
+Create Salary Band:
+- < 30000 → Low
+- 30000–60000 → Medium
+- > 60000 → High
+
+---------------------------------------------------
+8. Apply Changes
+---------------------------------------------------
+- Click Home → Close & Apply
+- Data model loads with clean, transformed data
+
+---------------------------------------------------
+9. Visuals Built (Example)
+---------------------------------------------------
+HR Analytics:
+- Bar chart: Employee Count by Department
+- Column chart: Avg Salary by Age Group
+
+Superstore:
+- Bar chart: Sales by Category
+- Line chart: Monthly Sales Trend
+
+Customer Churn:
+- Pie chart: Churn vs Non-Churn
+- Bar chart: Churn by Contract Type
+
+---------------------------------------------------
+Final Outcome
+---------------------------------------------------
+- Raw data cleaned and standardized
+- Business-ready columns created
+- Dataset optimized for dashboarding
+
+Note:
+.pbix file and dashboard_export.pdf must be created directly
+inside Power BI Desktop after applying these steps.
